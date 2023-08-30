@@ -13,6 +13,7 @@ def fmt(data: any) -> str:
     if type(data) not in [int, float]:
         return str(data)
 
+    # TODO: this cuts off numbers that are actually supposed to be decimals, find another way.
     return format(data, '.0f')
 
 

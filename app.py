@@ -83,15 +83,14 @@ if save_code:
     save = Save(save_code)
 
 if save is not None:
-    blocks = save.fields['blocks']
     with st.sidebar:
         show_unknowns = st.toggle('Show unknown values')
         if show_unknowns:
             st.info('*values after the slash are the expected values*')
 
         st.title('General Info')
-        version = blocks[0].fields['version']
-        general = blocks[2].fields
+        version = save.blocks[0].version
+        general = save.blocks[2].fields
 
         general_copy = general.copy()
 
@@ -109,7 +108,7 @@ if save is not None:
             """)
 
         st.title('Statistics')
-        stats = blocks[4].fields
+        stats = save.blocks[4].fields
         st.markdown(format_fields(stats, include_unknowns=show_unknowns))
 
     with st.expander('See decoded, but unparsed data'):
@@ -122,7 +121,7 @@ if save is not None:
     with col1:
         st.header('Buildings')
 
-        buildings = blocks[5].fields['buildings']
+        buildings = save.blocks[5].buildings
         for name, building in buildings.items():
             if minigame := building.fields['minigame']:
                 minigames[MINIGAME_NAMES[name]] = minigame
@@ -141,7 +140,7 @@ if save is not None:
     with col3:
         st.header('Other')
 
-        buffs = blocks[8].fields['buffs']
+        buffs = save.blocks[8].buffs
         for buff in buffs:
             copy = buff.fields.copy()
             id = buff.fields['buffId']

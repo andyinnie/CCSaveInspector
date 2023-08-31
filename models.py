@@ -1,7 +1,7 @@
 # core parsing logic
 
 from base64 import b64decode, b64encode
-from typing import List, Union
+from typing import List, Union, Dict
 
 from constants import *
 from util import fmt, Encodable
@@ -185,7 +185,7 @@ class Buff(Encodable):
         else:
             data = None
 
-        self.fields = {
+        self.fields: Dict[str, Union[int, float, None, str]] = {
             'buffId': int(split[0]),
             'ticksTotal': int(split[1]),
             'ticksLeft': int(split[2]),
@@ -194,7 +194,10 @@ class Buff(Encodable):
         }
 
     def encode(self):
-        fields_list = list(self.fields.values())
+        copy = self.fields.copy()
+        copy['multiplier'] = str(self.fields['multiplier'])
+
+        fields_list = list(copy.values())
         if fields_list[-1] is None:
             fields_list.pop()
 
@@ -205,13 +208,13 @@ class Block(Encodable):
     # parse the raw string
     def __init__(self, raw: str):
         self.raw = raw
-        self.fields = {
-            'not': 'implemented',
-        }
 
     # construct the string for rebuilding the save file
     def encode(self):
-        return ';'.join(list(map(fmt, self.fields.values())))
+        if hasattr(self, 'fields') and isinstance(self.fields, dict):
+            return ';'.join(list(map(fmt, self.fields.values())))
+        else:
+            return self.raw
 
 
 class EmptyBlock(Block):
@@ -229,17 +232,15 @@ class EmptyBlock(Block):
 class UnknownBlock(Block):
     def __init__(self, raw: str):
         super().__init__(raw)
-        self.fields = {
-            'rawData': raw
-        }
 
 
 class VersionBlock(Block):
     def __init__(self, raw: str):
         super().__init__(raw)
-        self.fields = {
-            'version': raw,
-        }
+        self.version = raw
+
+    def encode(self):
+        return self.version
 
 
 class GeneralBlock(Block):
@@ -309,7 +310,7 @@ class StatsBlock(Block):
             'unknown33/0': split[45],
             'unknown34/0': split[46],
             'unknown35/empty': split[47],
-            'unknown36/100': split[48],
+            'unknown36/100': split[48],  # heralds?
             'unknown37/0': split[49],
             'unknown38/0': split[50],
             'cpsHighestThisAscension': float(split[51]),
@@ -324,16 +325,12 @@ class BuildingsBlock(Block):
         super().__init__(raw)
         split = raw.split(';')
 
-        buildings = dict()
+        self.buildings = dict()
         for i, b in enumerate(split[:-1]):
-            buildings[BUILDINGS[i]] = Building(b, i)
-
-        self.fields = {
-            'buildings': buildings
-        }
+            self.buildings[BUILDINGS[i]] = Building(b, i)
 
     def encode(self):
-        return ';'.join(list(map(fmt, self.fields['buildings'].values()))) + ';'
+        return ';'.join(list(map(fmt, self.buildings.values()))) + ';'
 
 
 class BuffsBlock(Block):
@@ -341,14 +338,12 @@ class BuffsBlock(Block):
         super().__init__(raw)
         split = raw.split(';')
 
-        self.fields = {
-            'buffs': list(map(Buff, split[:-1]))
-        }
+        self.buffs = list(map(Buff, split[:-1]))
 
     def encode(self):
-        if not self.fields['buffs']:
+        if not self.buffs:
             return ''
-        return ';'.join(list(map(fmt, self.fields['buffs']))) + ';'
+        return ';'.join(list(map(fmt, self.buffs))) + ';'
 
 
 BLOCKS_CONFIG = [
@@ -368,13 +363,10 @@ BLOCKS_CONFIG = [
 class Save:
     def __init__(self, raw_export_str: str) -> None:
         decoded = self.decode_from_raw(raw_export_str)
-        blocks: List[Block] = []
+        self.blocks: List[Block] = []
         block_split = decoded.split('|')
         for data, cls in zip(block_split, BLOCKS_CONFIG):
-            blocks.append(cls(data))
-        self.fields = {
-            'blocks': dict(enumerate(blocks)),
-        }
+            self.blocks.append(cls(data))
 
     def encode_and_b64(self) -> str:
         encoded = b64encode(self.encode().encode('utf-8')).decode('utf-8')
@@ -386,4 +378,4 @@ class Save:
         return b64decode(prepared).decode('utf-8')
 
     def encode(self):
-        return '|'.join(list(map(fmt, self.fields['blocks'].values())))
+        return '|'.join(list(map(fmt, self.blocks)))

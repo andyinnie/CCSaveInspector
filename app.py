@@ -137,7 +137,7 @@ if save is not None:
 
         achievements = save.blocks[7].unlocked
         box('Achievements', '<ul>' + ''.join([
-            f'<li>{title}</li>' for title in achievements
+            f'<li>{title}</li>' for title, value in achievements.items() if value
         ]) + '</ul>')
 
         st.write('')  # idk WHY it doesn't just add space like EVERY other box

@@ -254,8 +254,8 @@ class GeneralBlock(Block):
         super().__init__(raw)
         split = raw.split(';')
         self.fields = {
-            'timeStarted': int(split[0]),
-            'timeAscended': int(split[1]),  # guessing
+            'timeAscended': int(split[0]),
+            'timeStarted': int(split[1]),  # guessing
             'timeSaved': int(split[2]),
             'name': split[3],
             'RandomizerSeed': split[4],
@@ -263,7 +263,7 @@ class GeneralBlock(Block):
         }
 
 
-class SettingsBlock(Block):
+class OptionsBlock(Block):
     def __init__(self, raw: str):
         super().__init__(raw)
         self.options = dict()
@@ -361,10 +361,12 @@ class BuildingsBlock(Block):
 class AchievementsBlock(Block):
     def __init__(self, raw: str):
         super().__init__(raw)
-        self.unlocked = []
-        for i, c in enumerate(raw):
-            if c == '1':
-                self.unlocked.append(ACHIEVEMENTS[i])
+        self.unlocked = dict()
+        for i, name in enumerate(ACHIEVEMENTS):
+            self.unlocked[name] = raw[i] == '1'
+
+    def encode(self):
+        return ''.join(['1' if value else '0' for value in self.unlocked.values()])
 
 
 class BuffsBlock(Block):
@@ -382,15 +384,15 @@ class BuffsBlock(Block):
 
 BLOCKS_CONFIG = [
     VersionBlock,
-    EmptyBlock,
+    EmptyBlock,  # this block is actually empty on purpose "just in case we need some more stuff here"
     GeneralBlock,
-    SettingsBlock,
+    OptionsBlock,
     StatsBlock,
     BuildingsBlock,
-    UnknownBlock,  # probably upgrades. it's 1750 0s and 1s
+    UnknownBlock,  # upgrades (i don't want to do this)
     AchievementsBlock,
     BuffsBlock,
-    UnknownBlock,  # always just says META:*cooler sample mod,*lang sample mod,*sample mod;
+    UnknownBlock,  # mod data
 ]
 
 

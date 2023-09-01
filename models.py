@@ -26,6 +26,12 @@ class FarmMinigame(Minigame):
 
         space_split = raw.split(' ')
         general_split = space_split[0].split(':')
+
+        seeds_str = space_split[1]
+        seeds = dict()
+        for i, name in enumerate(SEEDS):
+            seeds[name] = seeds_str[i] == '1'
+
         plot_split = space_split[2].split(':')
         plot = list(map(int, plot_split[:-1]))
         plot_plants = plot[::2]
@@ -41,10 +47,10 @@ class FarmMinigame(Minigame):
                 'harvested': int(general_split[4]),
                 'harvestedAllTime': int(general_split[5]),
                 'gardenOpen': int(general_split[6]),
-                'unknown2/0': general_split[7],
-                'unknownTime0': int(general_split[8]),
+                'convertTimes': int(general_split[7]),
+                'timeNextFreeze': int(general_split[8]),
             },
-            'seeds': space_split[1],
+            'seeds': seeds,
             'plot': plot,
         }
 
@@ -57,7 +63,7 @@ class FarmMinigame(Minigame):
 
         return ' '.join([                                             # VVV dumb idiot
             ':'.join(list(map(fmt, self.fields['general'].values()))) + ':',
-            self.fields['seeds'],
+            ''.join(['1' if value else '0' for value in self.fields['seeds'].values()]),
             ':'.join(list(map(fmt, plot_flat))),
         ])
 
@@ -68,9 +74,9 @@ class Stock(Encodable):
         split = raw.split(':')
         self.fields = {
             'valueCents': int(split[0]),
-            'unknown0/0-5': int(split[1]),
-            'unknown1': int(split[2]),
-            'unknown2': int(split[3]),
+            'mode': int(split[1]),
+            'd': int(split[2]),
+            'dur': int(split[3]),
             'amount': int(split[4]),
             'hidden': int(split[5]),
             'boughtThisTick': int(split[6]),
@@ -91,7 +97,7 @@ class BankMinigame(Minigame):
 
         self.fields = {
             'general': {
-                'unknown0/0': general_split[0],
+                'officeLevel': int(general_split[0]),
                 'brokers': int(general_split[1]),
                 'lines': int(general_split[2]),
                 'profits': float(general_split[3]),
@@ -187,8 +193,8 @@ class Buff(Encodable):
 
         self.fields: Dict[str, Union[int, float, None, str]] = {
             'buffId': int(split[0]),
-            'ticksTotal': int(split[1]),
-            'ticksLeft': int(split[2]),
+            'framesTotal': int(split[1]),
+            'framesLeft': int(split[2]),
             'multiplier': float(split[3]),
             'data': data,
         }
@@ -252,9 +258,28 @@ class GeneralBlock(Block):
             'timeAscended': int(split[1]),  # guessing
             'timeSaved': int(split[2]),
             'name': split[3],
-            'unknown0/mvahg': split[4],
-            'unknown1/0100000': split[5],
+            'RandomizerSeed': split[4],
+            'appearance': split[5],
         }
+
+
+class SettingsBlock(Block):
+    def __init__(self, raw: str):
+        super().__init__(raw)
+        self.options = dict()
+        for i, name in enumerate(OPTIONS):
+            self.options[name] = raw[i] == '1'
+
+        for name in ['Short numbers', 'Scary stuff']:
+            self.options[name] = not self.options[name]
+
+    def encode(self):
+        copy = self.options.copy()
+
+        for name in ['Short numbers', 'Scary stuff']:
+            copy[name] = not self.options[name]
+
+        return ''.join(['1' if value else '0' for value in copy.values()])
 
 
 class StatsBlock(Block):
@@ -267,56 +292,56 @@ class StatsBlock(Block):
             'clicks': int(split[2]),
             'clicksGolden': int(split[3]),
             'cookiesHandmade': float(split[4]),
-            'unknown0': split[5],
-            'unknown1/0': split[6],
-            'unknown2/0': split[7],
-            'unknown3/0': split[8],
+            'goldenCookiesMissed': int(split[5]),
+            'backgroundType': int(split[6]),
+            'milkType': int(split[7]),
+            'cookiesPast': float(split[8]),
             'grandmatriarchsStatus': int(split[9]),
             'timesPledged': int(split[10]),
-            'ticksLeftPledge': int(split[11]),
+            'framesLeftPledge': int(split[11]),
             'researchUpgradeId': int(split[12]),
-            'researchTicksLeft': int(split[13]),
-            'unknown7/0': split[14],
+            'researchFramesLeft': int(split[13]),
+            'ascensions': int(split[14]),
             'clicksGoldenAllTime': int(split[15]),
             'cookiesWrinklers': float(split[16]),
             'wrinklersPopped': int(split[17]),
-            'unknown10/0': split[18],
-            'unknown11/0': split[19],
-            'unknown12/0': split[20],
-            'unknown13/0': split[21],
+            'santaLevel': int(split[18]),
+            'reindeerClicked': int(split[19]),
+            'framesLeftSeason': int(split[20]),
+            'seasonSwitcherUses': int(split[21]),
             'unknown14/empty': split[22],
             'cookiesWrinklersCurrent': float(split[23]),
             'wrinklersCurrent': int(split[24]),
-            'unknown17/0': split[25],
-            'unknown18/0': split[26],
-            'unknown19/0': split[27],
-            'unknown20/0': split[28],
-            'unknown21/0': split[29],
-            'unknown22/-1': split[30],
-            'unknown23/-1': split[31],
-            'unknown24/-1': split[32],
-            'unknown25/-1': split[33],
-            'unknown26/-1': split[34],
-            'unknown27/0': split[35],
-            'unknown28/0': split[36],
-            'unknown29/0': split[37],
-            'unknown30/0': split[38],
+            'prestigeLevel': float(split[25]),
+            'heavenlyChips': float(split[26]),
+            'heavenlyChipsSpent': float(split[27]),
+            'heavenlyCookies': float(split[28]),
+            'ascensionMode': int(split[29]),
+            'permanentUpgrade0': int(split[30]),
+            'permanentUpgrade1': int(split[31]),
+            'permanentUpgrade2': int(split[32]),
+            'permanentUpgrade3': int(split[33]),
+            'permanentUpgrade4': int(split[34]),
+            'dragonLevel': int(split[35]),
+            'dragonAura': int(split[36]),
+            'dragonAura2': int(split[37]),
+            'chimeType': int(split[38]),
             'volume': int(split[39]),
-            'unknown31/0': split[40],
-            'unknown32/0': split[41],
+            'wrinklersShiny': int(split[40]),
+            'cookiesWrinklersShiny': float(split[41]),
             'sugarLumps': int(split[42]),
             'sugarLumpsAllTime': int(split[43]),
             'timeLastSugarLump': int(split[44]),
-            'unknown33/0': split[45],
-            'unknown34/0': split[46],
-            'unknown35/empty': split[47],
-            'unknown36/100': split[48],  # heralds?
-            'unknown37/0': split[49],
-            'unknown38/0': split[50],
+            'timeLastSugarLumpRefill': int(split[45]),
+            'sugarLumpType': int(split[46]),
+            'vault': split[47],
+            'heralds': int(split[48]),
+            'goldenCookieFortune': int(split[49]),
+            'cpsFortune': int(split[50]),
             'cpsHighestThisAscension': float(split[51]),
             'volumeMusic': int(split[52]),
-            'unknown39/0': split[53],
-            'unknown40/0': split[54],
+            'cookiesSent': float(split[53]),
+            'cookiesReceived': float(split[54]),
         }
 
 
@@ -331,6 +356,15 @@ class BuildingsBlock(Block):
 
     def encode(self):
         return ';'.join(list(map(fmt, self.buildings.values()))) + ';'
+
+
+class AchievementsBlock(Block):
+    def __init__(self, raw: str):
+        super().__init__(raw)
+        self.unlocked = []
+        for i, c in enumerate(raw):
+            if c == '1':
+                self.unlocked.append(ACHIEVEMENTS[i])
 
 
 class BuffsBlock(Block):
@@ -350,11 +384,11 @@ BLOCKS_CONFIG = [
     VersionBlock,
     EmptyBlock,
     GeneralBlock,
-    UnknownBlock,  # 27 0s and 1s
+    SettingsBlock,
     StatsBlock,
     BuildingsBlock,
     UnknownBlock,  # probably upgrades. it's 1750 0s and 1s
-    UnknownBlock,  # achievements. 622 + 21 = 643 0s and 1s
+    AchievementsBlock,
     BuffsBlock,
     UnknownBlock,  # always just says META:*cooler sample mod,*lang sample mod,*sample mod;
 ]

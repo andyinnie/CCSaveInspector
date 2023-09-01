@@ -44,7 +44,10 @@ def format_minigame(name: str, minigame: Minigame, *,
         case 'Garden':
             return sep.join([
                 format_fields(fields['general'], sep=sep, include_unknowns=include_unknowns),
-                f'**Seeds Unlocked:** {fields["seeds"]}',
+                f'**Seeds Unlocked:**',
+                '<ul>' + ''.join([
+                    f'<li>{seed}</li>' for seed, unlocked in fields['seeds'].items() if unlocked
+                ]) + '</ul>'
                 f'**Plot:** {fields["plot"]}',  # TODO: make the garden pretty
             ])
         case 'Stock Market':
@@ -67,7 +70,7 @@ def format_minigame(name: str, minigame: Minigame, *,
 
 
 def box(title: str, body: str) -> None:
-    st.markdown(f'<div style="border:0px hidden;border-radius:10px;background-color:#172D43;padding:0 20px 5px">'
+    st.markdown(f'<div style="border:0px hidden;border-radius:10px;background-color:#172D43;padding:0 20px 5px;">'
                 f'<h2>{title}</h2>\n\n'
                 f'{body}'
                 f'</div>', unsafe_allow_html=True)
@@ -84,32 +87,17 @@ if save_code:
 
 if save is not None:
     with st.sidebar:
-        show_unknowns = st.toggle('Show unknown values')
-        if show_unknowns:
-            st.info('*values after the slash are the expected values*')
-
         st.title('General Info')
         version = save.blocks[0].version
         general = save.blocks[2].fields
 
         general_copy = general.copy()
 
-        if show_unknowns:
-            st.markdown(format_fields(general_copy, include_unknowns=show_unknowns))
-        else:
-            st.markdown(f"""
-            **Name:** {general['name']}
-            
-            **Game Version:** {version}
-            
-            **Time Started:** {format_time(general['timeStarted'])}
-            
-            **Time Saved:** {format_time(general['timeSaved'])}
-            """)
+        st.markdown(format_fields(general_copy))
 
         st.title('Statistics')
         stats = save.blocks[4].fields
-        st.markdown(format_fields(stats, include_unknowns=show_unknowns))
+        st.markdown(format_fields(stats))
 
     with st.expander('See decoded, but unparsed data'):
         st.write(save.encode())
@@ -129,13 +117,13 @@ if save is not None:
             copy = building.fields.copy()
             del copy['minigame']
 
-            box(name, format_fields(copy, sep='</br>', include_unknowns=show_unknowns))
+            box(name, format_fields(copy, sep='</br>'))
 
     with col2:
         st.header('Minigames')
 
         for name, minigame in minigames.items():
-            box(name, format_minigame(name, minigame, sep='</br>', include_unknowns=show_unknowns))
+            box(name, format_minigame(name, minigame, sep='</br>'))
 
     with col3:
         st.header('Other')
@@ -146,3 +134,15 @@ if save is not None:
             id = buff.fields['buffId']
             copy['buffId'] = f'{id} ({BUFFS[id]})'
             box('Buff', format_fields(copy, sep='</br>'))
+
+        achievements = save.blocks[7].unlocked
+        box('Achievements', '<ul>' + ''.join([
+            f'<li>{title}</li>' for title in achievements
+        ]) + '</ul>')
+
+        st.write('')  # idk WHY it doesn't just add space like EVERY other box
+
+        options = save.blocks[3].options
+        box('Options', '<br>'.join([
+            f'**{name}:** ' + ('On' if value else 'Off') for name, value in options.items()
+        ]))

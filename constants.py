@@ -952,3 +952,1123 @@ ACHIEVEMENTS = [
     'All on deck',
     'A round of applause',
 ]
+
+UPGRADES = [
+    'Reinforced index finger',
+    'Carpal tunnel prevention cream',
+    'Ambidextrous',
+    'Thousand fingers',
+
+    'Million fingers',
+    'Billion fingers',
+    'Trillion fingers',
+
+    'Forwards from grandma',
+    'Steel-plated rolling pins',
+    'Lubricated dentures',
+
+    'Cheap hoes',
+    'Fertilizer',
+    'Cookie trees',
+
+    'Sturdier conveyor belts',
+    'Child labor',
+    'Sweatshop',
+
+    'Sugar gas',
+    'Megadrill',
+    'Ultradrill',
+
+    'Vanilla nebulae',
+    'Wormholes',
+    'Frequent flyer',
+
+    'Antimony',
+    'Essence of dough',
+    'True chocolate',
+
+    'Ancient tablet',
+    'Insane oatling workers',
+    'Soul bond',
+
+    'Flux capacitors',
+    'Time paradox resolver',
+    'Quantum conundrum',
+
+    'Kitten helpers',
+    'Kitten workers',
+
+    'Plain cookies',
+    'Sugar cookies',
+    'Oatmeal raisin cookies',
+    'Peanut butter cookies',
+    'Coconut cookies',
+    'White chocolate cookies',
+    'Macadamia nut cookies',
+    'Double-chip cookies',
+    'White chocolate macadamia nut cookies',
+    'All-chocolate cookies',
+
+    'Quadrillion fingers',
+
+    'Prune juice',
+    'Genetically-modified cookies',
+    'Radium reactors',
+    'Ultimadrill',
+    'Warp drive',
+    'Ambrosia',
+    'Sanity dance',
+    'Causality enforcer',
+
+    'Lucky day',
+    'Serendipity',
+
+    'Kitten engineers',
+
+    'Dark chocolate-coated cookies',
+    'White chocolate-coated cookies',
+
+    'Farmer grandmas',
+    'Miner grandmas',
+    'Worker grandmas',
+    'Cosmic grandmas',
+    'Transmuted grandmas',
+    'Altered grandmas',
+    'Grandmas\' grandmas',
+
+    'Bingo center/Research facility',
+
+    'Specialized chocolate chips',
+    'Designer cocoa beans',
+    'Ritual rolling pins',
+    'Underworld ovens',
+    'One mind',
+    'Exotic nuts',
+    'Communal brainsweep',
+    'Arcane sugar',
+    'Elder Pact',
+    'Elder Pledge',
+
+    'Plastic mouse',
+    'Iron mouse',
+    'Titanium mouse',
+    'Adamantium mouse',
+
+    'Ultrascience',
+
+    'Eclipse cookies',
+    'Zebra cookies',
+
+    'Quintillion fingers',
+
+    'Gold hoard',
+
+    'Elder Covenant',
+
+    'Revoke Elder Covenant',
+
+    'Get lucky',
+
+    'Sacrificial rolling pins',
+
+    'Snickerdoodles',
+    'Stroopwafels',
+    'Macaroons',
+
+    'Neuromancy',
+
+    'Empire biscuits',
+    'British tea biscuits',
+    'Chocolate british tea biscuits',
+    'Round british tea biscuits',
+    'Round chocolate british tea biscuits',
+    'Round british tea biscuits with heart motif',
+    'Round chocolate british tea biscuits with heart motif',
+
+    'Sugar bosons',
+    'String theory',
+    'Large macaron collider',
+    'Big bang bake',
+
+    'Antigrandmas',
+
+    'Madeleines',
+    'Palmiers',
+    'Palets',
+    'Sablés',
+
+    'Kitten overseers',
+
+    'Sextillion fingers',
+
+    'Double-thick glasses',
+    'Gingerbread scarecrows',
+    'Recombobulators',
+    'H-bomb mining',
+    'Chocolate monoliths',
+    'Aqua crustulae',
+    'Brane transplant',
+    'Yestermorrow comparators',
+    'Reverse cyclotrons',
+
+    'Unobtainium mouse',
+
+    'Caramoas',
+    'Sagalongs',
+    'Shortfoils',
+    'Win mints',
+
+    'Perfect idling',
+
+    'Fig gluttons',
+    'Loreols',
+    'Jaffa cakes',
+    'Grease\'s cups',
+
+    'Heavenly chip secret',
+    'Heavenly cookie stand',
+    'Heavenly bakery',
+    'Heavenly confectionery',
+    'Heavenly key',
+
+    'Skull cookies',
+    'Ghost cookies',
+    'Bat cookies',
+    'Slime cookies',
+    'Pumpkin cookies',
+    'Eyeball cookies',
+    'Spider cookies',
+
+    'Persistent memory',
+
+    'Wrinkler doormat',
+
+    'Christmas tree biscuits',
+    'Snowflake biscuits',
+    'Snowman biscuits',
+    'Holly biscuits',
+    'Candy cane biscuits',
+    'Bell biscuits',
+    'Present biscuits',
+
+    'Gingerbread men',
+    'Gingerbread trees',
+
+    'A festive hat',
+
+    'Increased merriness',
+    'Improved jolliness',
+    'A lump of coal',
+    'An itchy sweater',
+    'Reindeer baking grounds',
+    'Weighted sleighs',
+    'Ho ho ho-flavored frosting',
+    'Season savings',
+    'Toy workshop',
+    'Naughty list',
+    'Santa\'s bottomless bag',
+    'Santa\'s helpers',
+    'Santa\'s legacy',
+    'Santa\'s milk and cookies',
+
+    'Reindeer season',
+
+    'Santa\'s dominion',
+
+    'Pure heart biscuits',
+    'Ardent heart biscuits',
+    'Sour heart biscuits',
+    'Weeping heart biscuits',
+    'Golden heart biscuits',
+    'Eternal heart biscuits',
+
+    'Gem polish',
+    '9th color',
+    'Chocolate light',
+    'Grainbow',
+    'Pure cosmic light',
+
+    'Rainbow grandmas',
+
+    'Season switcher',
+    'Festive biscuit',
+    'Ghostly biscuit',
+    'Lovesick biscuit',
+    'Fool\'s biscuit',
+
+    'Eternal seasons',
+
+    'Kitten managers',
+
+    'Septillion fingers',
+    'Octillion fingers',
+
+    'Eludium mouse',
+    'Wishalloy mouse',
+    'Aging agents',
+    'Pulsar sprinklers',
+    'Deep-bake process',
+    'Coreforge',
+    'Generation ship',
+    'Origin crucible',
+    'Deity-sized portals',
+    'Far future enactment',
+    'Nanocosmics',
+    'Glow-in-the-dark',
+
+    'Rose macarons',
+    'Lemon macarons',
+    'Chocolate macarons',
+    'Pistachio macarons',
+    'Hazelnut macarons',
+    'Violet macarons',
+
+    'Magic shenanigans',
+
+    'Bunny biscuit',
+
+    'Chicken egg',
+    'Duck egg',
+    'Turkey egg',
+    'Quail egg',
+    'Robin egg',
+    'Ostrich egg',
+    'Cassowary egg',
+    'Salmon roe',
+    'Frogspawn',
+    'Shark egg',
+    'Turtle egg',
+    'Ant larva',
+    'Golden goose egg',
+    'Faberge egg',
+    'Wrinklerspawn',
+    'Cookie egg',
+    'Omelette',
+    'Chocolate egg',
+    'Century egg',
+
+    'Caramel macarons',
+    'Licorice macarons',
+
+    'Taller tellers',
+    'Scissor-resistant credit cards',
+    'Acid-proof vaults',
+    'Chocolate coins',
+    'Exponential interest rates',
+    'Financial zen',
+
+    'Golden idols',
+    'Sacrifices',
+    'Delicious blessing',
+    'Sun festival',
+    'Enlarged pantheon',
+    'Great Baker in the sky',
+
+    'Pointier hats',
+    'Beardlier beards',
+    'Ancient grimoires',
+    'Kitchen curses',
+    'School of sorcery',
+    'Dark formulas',
+
+    'Banker grandmas',
+    'Priestess grandmas',
+    'Witch grandmas',
+
+    'Tin of british tea biscuits',
+    'Box of macarons',
+    'Box of brand biscuits',
+
+    'Pure black chocolate cookies',
+    'Pure white chocolate cookies',
+    'Ladyfingers',
+    'Tuiles',
+    'Chocolate-stuffed biscuits',
+    'Checker cookies',
+    'Butter cookies',
+    'Cream cookies',
+
+    'Permanent upgrade slot I',
+    'Permanent upgrade slot II',
+    'Permanent upgrade slot III',
+    'Permanent upgrade slot IV',
+    'Permanent upgrade slot V',
+
+    'Starspawn',
+    'Starsnow',
+    'Starterror',
+    'Starlove',
+    'Startrade',
+
+    'Angels',
+    'Archangels',
+    'Virtues',
+    'Dominions',
+    'Cherubim',
+    'Seraphim',
+    'God',
+
+    'Twin Gates of Transcendence',
+
+    'Heavenly luck',
+    'Lasting fortune',
+    'Decisive fate',
+
+    'Divine discount',
+    'Divine sales',
+    'Divine bakeries',
+
+    'Starter kit',
+    'Starter kitchen',
+    'Halo gloves',
+
+    'Kitten angels',
+
+    'Unholy bait',
+    'Sacrilegious corruption',
+
+    'Xtreme walkers',
+    'Fudge fungus',
+    'Planetsplitters',
+    'Cyborg workforce',
+    'Way of the wallet',
+    'Creation myth',
+    'Cookiemancy',
+    'Dyson sphere',
+    'Theory of atomic fluidity',
+    'End of times back-up plan',
+    'Great loop hypothesis',
+    'The Pulse',
+    'Lux sanctorum',
+
+    'The Unbridling',
+    'Wheat triffids',
+    'Canola oil wells',
+    '78-hour days',
+    'The stuff rationale',
+    'Theocracy',
+    'Rabbit trick',
+    'The final frontier',
+    'Beige goo',
+    'Maddening chants',
+    'Cookietopian moments of maybe',
+    'Some other super-tiny fundamental particle? Probably?',
+    'Reverse shadows',
+
+    'Kitten accountants',
+    'Kitten specialists',
+    'Kitten experts',
+
+    'How to bake your dragon',
+
+    'A crumbly egg',
+
+    'Chimera',
+
+    'Tin of butter cookies',
+
+    'Golden switch',
+
+    'Classic dairy selection',
+
+    'Fanciful dairy selection',
+
+    'Dragon cookie',
+
+    'Golden switch [off]',
+
+    'Golden switch [on]',
+
+    'Milk selector',
+
+    'Milk chocolate butter biscuit',
+    'Dark chocolate butter biscuit',
+    'White chocolate butter biscuit',
+    'Ruby chocolate butter biscuit',
+
+    'Gingersnaps',
+    'Cinnamon cookies',
+    'Vanity cookies',
+    'Cigars',
+    'Pinwheel cookies',
+    'Fudge squares',
+
+    'Digits',
+
+    'Butter horseshoes',
+    'Butter pucks',
+    'Butter knots',
+    'Butter slabs',
+    'Butter swirls',
+
+    'Shortbread biscuits',
+    'Millionaires\' shortbreads',
+    'Caramel cookies',
+
+    'Belphegor',
+    'Mammon',
+    'Abaddon',
+    'Satan',
+    'Asmodeus',
+    'Beelzebub',
+    'Lucifer',
+
+    'Golden cookie alert sound',
+
+    'Golden cookie sound selector',
+
+    'Basic wallpaper assortment',
+
+    'Legacy',
+
+    'Elder spice',
+
+    'Residual luck',
+
+    'Fantasteel mouse',
+    'Nevercrack mouse',
+
+    'Five-finger discount',
+
+    'Future almanacs',
+    'Rain prayer',
+
+    'Seismic magic',
+    'Asteroid mining',
+
+    'Quantum electronics',
+    'Temporal overclocking',
+
+    'Contracts from beyond',
+    'Printing presses',
+
+    'Paganism',
+    'God particle',
+
+    'Arcane knowledge',
+    'Magical botany',
+
+    'Fossil fuels',
+    'Shipyards',
+
+    'Primordial ores',
+    'Gold fund',
+
+    'Infernal crops',
+    'Abysmal glimmer',
+
+    'Relativistic parsec-skipping',
+    'Primeval glow',
+
+    'Extra physics funding',
+    'Chemical proficiency',
+
+    'Light magic',
+    'Mystical energies',
+
+    'Synergies Vol. I',
+    'Synergies Vol. II',
+
+    'Heavenly cookies',
+    'Wrinkly cookies',
+    'Distilled essence of redoubled luck',
+
+    'Occult obstruction',
+    'Glucose-charged air',
+
+    'Lavender chocolate butter biscuit',
+
+    'Lombardia cookies',
+    'Bastenaken cookies',
+
+    'Pecan sandies',
+    'Moravian spice cookies',
+    'Anzac biscuits',
+    'Buttercakes',
+    'Ice cream sandwiches',
+
+    'Stevia Caelestis',
+    'Diabetica Daemonicus',
+    'Sucralosia Inutilis',
+
+    'Lucky digit',
+    'Lucky number',
+    'Lucky payout',
+
+    'Background selector',
+
+    'Lucky grandmas',
+
+    'Your lucky cookie',
+    '"All Bets Are Off" magic coin',
+    'Winning lottery ticket',
+    'Four-leaf clover field',
+    'A recipe book about books',
+    'Leprechaun village',
+    'Improbability drive',
+    'Antisuperstistronics',
+
+    'Gemmed talismans',
+
+    'Kitten consultants',
+
+    'Birthday cookie',
+
+    'Armythril mouse',
+
+    'Reverse dementia',
+    'Humane pesticides',
+    'Mole people',
+    'Machine learning',
+    'Edible money',
+    'Sick rap prayers',
+    'Deluxe tailored wands',
+    'Autopilot',
+    'The advent of chemistry',
+    'The real world',
+    'Second seconds',
+    'Quantum comb',
+    'Crystal mirrors',
+    'Bunnypedes',
+
+    'Kitten assistants to the regional manager',
+
+    'Charm quarks',
+
+    'Pink biscuits',
+    'Whole-grain cookies',
+    'Candy cookies',
+    'Big chip cookies',
+    'One chip cookies',
+
+    'Sugar baking',
+    'Sugar craving',
+    'Sugar aging process',
+
+    'Sugar frenzy',
+
+    'Sprinkles cookies',
+    'Peanut butter blossoms',
+    'No-bake cookies',
+    'Florentines',
+    'Chocolate crinkles',
+    'Maple cookies',
+
+    'Turbo-charged soil',
+
+    'Technobsidian mouse',
+    'Plasmarble mouse',
+
+    'Kitten marketeers',
+
+    'Festivity loops',
+
+    'Persian rice cookies',
+    'Norwegian cookies',
+    'Crispy rice cookies',
+    'Ube cookies',
+    'Butterscotch cookies',
+    'Speculaas',
+
+    'Elderwort biscuits',
+    'Bakeberry cookies',
+    'Duketater cookies',
+    'Green yeast digestives',
+
+    'Fern tea',
+    'Ichor syrup',
+
+    'Wheat slims',
+
+    'Synthetic chocolate green honey butter biscuit',
+    'Royal raspberry chocolate butter biscuit',
+    'Ultra-concentrated high-energy chocolate butter biscuit',
+
+    'Timeproof hair dyes',
+    'Barnstars',
+    'Mine canaries',
+    'Brownie point system',
+    'Grand supercycles',
+    'Psalm-reading',
+    'Immobile spellcasting',
+    'Restaurants at the end of the universe',
+    'On second thought',
+    'Dimensional garbage gulper',
+    'Additional clock hands',
+    'Baking Nobel prize',
+    'Reverse theory of light',
+    'Revised probabilistics',
+
+    'Kitten analysts',
+
+    'Eye of the wrinkler',
+
+    'Inspired checklist',
+
+    'Pure pitch-black chocolate butter biscuit',
+
+    'Chocolate oatmeal cookies',
+    'Molasses cookies',
+    'Biscotti',
+    'Waffle cookies',
+
+    'Almond cookies',
+    'Hazelnut cookies',
+    'Walnut cookies',
+
+    'Label printer',
+
+    'Good manners',
+    'Lindworms',
+    'Bore again',
+    '"Volunteer" interns',
+    'Rules of acquisition',
+    'War of the gods',
+    'Electricity',
+    'Universal alphabet',
+    'Public betterment',
+    'Embedded microportals',
+    'Nostalgia',
+    'The definite molecule',
+    'Light capture measures',
+    '0-sided dice',
+
+    'Heralds',
+
+    'Metagrandmas',
+
+    'Metabakeries',
+    'Mandelbrown sugar',
+    'Fractoids',
+    'Nested universe theory',
+    'Menger sponge cake',
+    'One particularly good-humored cow',
+    'Chocolate ouroboros',
+    'Nested',
+    'Space-filling fibers',
+    'Endless book of prose',
+    'The set of all sets',
+
+    'Recursive mirrors',
+    # 'Compounded odds',
+    'Mice clicking mice',
+
+    'Custard creams',
+    'Bourbon biscuits',
+
+    'Keepsakes',
+
+    'Mini-cookies',
+
+    'Sugar crystal cookies',
+
+    'Box of maybe cookies',
+    'Box of not cookies',
+    'Box of pastries',
+
+    'Profiteroles',
+    'Jelly donut',
+    'Glazed donut',
+    'Chocolate cake',
+    'Strawberry cake',
+    'Apple pie',
+    'Lemon meringue pie',
+    'Butter croissant',
+
+    'Cookie dough',
+    'Burnt cookie',
+    'A chocolate chip cookie but with the chips picked off for some reason',
+    'Flavor text cookie',
+    'High-definition cookie',
+
+    'Toast',
+    'Peanut butter & jelly',
+    'Wookies',
+    'Cheeseburger',
+    'One lone chocolate chip',
+
+    'Genius accounting',
+
+    'Shimmering veil',
+
+    'Shimmering veil [off]',
+    'Shimmering veil [on]',
+
+    'Whoopie pies',
+    'Caramel wafer biscuits',
+    'Chocolate chip mocha cookies',
+    'Earl Grey cookies',
+    'Corn syrup cookies',
+    'Icebox cookies',
+    'Graham crackers',
+    'Hardtack',
+    'Cornflake cookies',
+    'Tofu cookies',
+    'Gluten-free cookies',
+    'Russian bread cookies',
+    'Lebkuchen',
+    'Aachener Printen',
+    'Canistrelli',
+    'Nice biscuits',
+    'French pure butter cookies',
+    'Petit beurre',
+    'Nanaimo bars',
+    'Berger cookies',
+    'Chinsuko',
+    'Panda koala biscuits',
+    'Putri salju',
+    'Milk cookies',
+
+    'Cookie crumbs',
+    'Chocolate chip cookie',
+
+    'Cosmic beginner\'s luck',
+    'Reinforced membrane',
+
+    'Binary grandmas',
+
+    'The JavaScript console for dummies',
+    '64bit arrays',
+    'Stack overflow',
+    'Enterprise compiler',
+    'Syntactic sugar',
+    'A nice cup of coffee',
+    'Just-in-time baking',
+    'cookies++',
+    'Software updates',
+    'Game.Loop',
+    'eval()',
+
+    'Script grannies',
+    'Tombola computing',
+
+    'Kruidnoten',
+    'Marie biscuits',
+    'Meringue cookies',
+
+    'Pizza',
+
+    'Crackers',
+
+    'Havabreaks',
+
+    'Kitten executives',
+
+    'Chai tea cookies',
+    'Yogurt cookies',
+    'Thumbprint cookies',
+    'Pizzelle',
+
+    'Zilla wafers',
+    'Dim Dams',
+
+    'Candy',
+
+    'Fortune #001',
+    'Fortune #002',
+    'Fortune #003',
+    'Fortune #004',
+    'Fortune #005',
+    'Fortune #006',
+    'Fortune #007',
+    'Fortune #008',
+    'Fortune #009',
+    'Fortune #010',
+    'Fortune #011',
+    'Fortune #012',
+    'Fortune #013',
+    'Fortune #014',
+    'Fortune #015',
+    'Fortune #016',
+    'Fortune #017',
+
+    'Fortune #100',
+    'Fortune #101',
+    'Fortune #102',
+    'Fortune #103',
+    'Fortune #104',
+
+    'Fortune cookies',
+
+    'A really good guide book',
+
+    'Prism heart biscuits',
+
+    'Kitten wages',
+    'Pet the dragon',
+
+    'Dragon scale',
+    'Dragon claw',
+    'Dragon fang',
+    'Dragon teddy bear',
+
+    'Granola cookies',
+    'Ricotta cookies',
+    'Roze koeken',
+    'Peanut butter cup cookies',
+    'Sesame cookies',
+    'Taiyaki',
+    'Vanillekipferl',
+
+    'Cosmic chocolate butter biscuit',
+
+    'Nonillion fingers',
+    'Miraculite mouse',
+    'Generation degeneration',
+    'Global seed vault',
+    'Air mining',
+    'Behavioral reframing',
+    'Altruistic loop',
+    'A novel idea',
+    'Spelling bees',
+    'Toroid universe',
+    'Hermetic reconciliation',
+    'His advent',
+    'Split seconds',
+    'Flavor itself',
+    'Light speed limit',
+    'A touch of determinism',
+    'This upgrade',
+    'Your biggest fans',
+
+    'Battenberg biscuits',
+    'Rosette cookies',
+    'Gangmakers',
+    'Welsh cookies',
+    'Raspberry cheesecake cookies',
+
+    'Alternate grandmas',
+
+    'Manifest destiny',
+    'The multiverse in a nutshell',
+    'All-conversion',
+    'Multiverse agents',
+    'Escape plan',
+    'Game design',
+    'Sandbox universes',
+    'Multiverse wars',
+    'Mobile ports',
+    'Encapsulated realities',
+    'Extrinsic clicking',
+    'Universal idling',
+
+    'Perforated mille-feuille cosmos',
+    'Infraverses and superverses',
+
+    'Fortune #018',
+
+    'Butter biscuit (with butter)',
+
+    'Visits',
+    'Reverse-veganism',
+    'Caramel alloys',
+    'The infinity engine',
+    'Diminishing tax returns',
+    'Apparitions',
+    'Wizard basements',
+    'Prime directive',
+    'Chromatic cycling',
+    'Domestic rifts',
+    'Patience abolished',
+    'Delicious pull',
+    'Occam\'s laser',
+    'On a streak',
+    'A box',
+    'Hacker shades',
+    'Break the fifth wall',
+
+    'Cat ladies',
+    'Milkhelp® lactose intolerance relief tablets',
+
+    'Aura gloves',
+    'Luminous gloves',
+
+    'Bokkenpootjes',
+    'Fat rascals',
+    'Ischler cookies',
+    'Matcha cookies',
+
+    'Earl Grey macarons',
+
+    'Pokey',
+
+    'Cashew cookies',
+    'Milk chocolate cookies',
+
+    'Brainy grandmas',
+
+    'Principled neural shackles',
+    'Obey',
+    'A sprinkle of irrationality',
+    'Front and back hemispheres',
+    'Neural networking',
+    'Cosmic brainstorms',
+    'Megatherapy',
+    'Synaptic lubricant',
+    'Psychokinesis',
+    'Spines',
+    'Neuraforming',
+    'Epistemological trickery',
+    'Every possible idea',
+
+    'Kitchen cabinets',
+    'Cookie mulch',
+    'Delicious mineralogy',
+    'N-dimensional assembly lines',
+    'Cookie Points',
+    'Negatheism',
+    'Magical realism',
+    'Cosmic foreground radiation',
+    'Arcanized glassware',
+    'Portal guns',
+    'Timeproof upholstery',
+    'Employee minification',
+    'Hyperblack paint',
+    'Silver lining maximization',
+    'Multiscale profiling',
+    'PHP containment vats',
+    'Opposite universe',
+    'The land of dreams',
+
+    'Thoughts & prayers',
+    'Fertile minds',
+
+    'Fortune #019',
+
+    'Decillion fingers',
+    'Aetherice mouse',
+
+    'Kitten admins',
+
+    'Everybutter biscuit',
+
+    'Unshackled Cursor',
+    'Unshackled Grandma',
+    'Unshackled Farm',
+    'Unshackled Mine',
+    'Unshackled Factory',
+    'Unshackled Bank',
+    'Unshackled Temple',
+    'Unshackled Wizard tower',
+    'Unshackled Shipment',
+    'Unshackled Alchemy lab',
+    'Unshackled Portal',
+    'Unshackled Time machine',
+    'Unshackled Antimatter condenser',
+    'Unshackled Prism',
+    'Unshackled Chancemaker',
+    'Unshackled Fractal engine',
+    'Unshackled Javascript console',
+    'Unshackled Idleverse',
+    'Unshackled Cortex baker',
+    
+    'Unshackled Flavor',
+    'Unshackled Berrylium',
+    'Unshackled Blueberrylium',
+    'Unshackled Chalcedhoney',
+    'Unshackled Buttergold',
+    'Unshackled Sugarmuck',
+    'Unshackled Jetmint',
+    'Unshackled Cherrysilver',
+    'Unshackled Hazelrald',
+    'Unshackled Mooncandy',
+    'Unshackled Astrofudge',
+    'Unshackled Alabascream',
+    'Unshackled Iridyum',
+    'Unshackled Glucosmium',
+
+    'Delicate touch',
+    'Steadfast murmur',
+    'Glittering edge',
+
+    'Distinguished wallpaper assortment',
+
+    'Sound test',
+
+    'Jukebox',
+
+    'Dalgona cookies',
+    'Spicy cookies',
+    'Smile cookies',
+    'Kolachy cookies',
+    'Gomma cookies',
+    'Vegan cookies',
+    'Coyotas',
+    'Frosted sugar cookies',
+    'Marshmallow sandwich cookies',
+    'Web cookies',
+    'Steamed cookies',
+
+    'Deep-fried cookie dough',
+
+    'Wrapping paper',
+
+    'Havreflarn',
+    'Alfajores',
+    'Gaufrettes',
+    'Cookie bars',
+
+    'Nines',
+
+    'Clone grandmas',
+
+    'Cloning vats',
+    'Energized nutrients',
+    'Stunt doubles',
+    'Clone recycling plant',
+    'Free-range clones',
+    'Genetic tailoring',
+    'Power in diversity',
+    'Self-betterment',
+    'Source control',
+    'United workforce',
+    'Safety patrols',
+    'Clone rights',
+    'One big family',
+    'Fine-tuned body plans',
+
+    'Foam-tipped canes',
+    'Self-driving tractors',
+    'Mineshaft supports',
+    'Universal automation',
+    'The big shortcake',
+    'Temple traps',
+    'Polymorphism',
+    'At your doorstep in 30 minutes or your money back',
+    'The dose makes the poison',
+    'A way home',
+    'Rectifying a mistake',
+    'Candied atoms',
+    'Lab goggles but like cool shades',
+    'Gambler\'s fallacy fallacy',
+    'The more they stay the same',
+    'Simulation failsafes',
+    'The other routes to Rome',
+    'Intellectual property theft',
+    'Reading your clones bedtime stories',
+
+    'Accelerated development',
+    'Peer review',
+
+    'Fortune #020',
+
+    'Personal biscuit',
+
+    'Unshackled Glimmeringue',
+
+    'Unshackled You',
+
+    'Kitten strategists',
+
+    'Baklavas',
+
+    'Snowball cookies',
+    'Sequilhos',
+    'Hazelnut swirlies',
+    'Spritz cookies',
+    'Mbatata cookies',
+    'Springerles',
+
+    'Undecillion fingers',
+    'Omniplast mouse',
+]

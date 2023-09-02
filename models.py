@@ -358,6 +358,23 @@ class BuildingsBlock(Block):
         return ';'.join(list(map(fmt, self.buildings.values()))) + ';'
 
 
+class UpgradesBlock(Block):
+    def __init__(self, raw: str):
+        super().__init__(raw)
+        self.unlocked = dict()
+        self.bought = dict()
+        for i, name in enumerate(UPGRADES):
+            self.unlocked[name] = raw[i * 2] == '1'
+            self.bought[name] = raw[i * 2 + 1] == '1'
+
+    def encode(self):
+        out = ''
+        for name in UPGRADES:
+            out += '1' if self.unlocked[name] else '0'
+            out += '1' if self.bought[name] else '0'
+        return out
+
+
 class AchievementsBlock(Block):
     def __init__(self, raw: str):
         super().__init__(raw)
@@ -389,7 +406,7 @@ BLOCKS_CONFIG = [
     OptionsBlock,
     StatsBlock,
     BuildingsBlock,
-    UnknownBlock,  # upgrades (i don't want to do this)
+    UpgradesBlock,
     AchievementsBlock,
     BuffsBlock,
     UnknownBlock,  # mod data

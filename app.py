@@ -5,9 +5,11 @@ from typing import Dict
 
 import streamlit as st
 
-from constants import MINIGAME_NAMES, BUFFS
+from constants import MINIGAME_NAMES, BUFFS, UPGRADES
 from models import Save, Minigame
 from util import fmt, format_time
+
+print(len(UPGRADES))
 
 
 def format_camel(camel_case_str: str) -> str:
@@ -146,3 +148,8 @@ if save is not None:
         box('Options', '<br>'.join([
             f'**{name}:** ' + ('On' if value else 'Off') for name, value in options.items()
         ]))
+
+        upgrades = save.blocks[6].unlocked
+        box('Upgrades (unlocked)', '<ul>' + ''.join([
+            f'<li>{title}</li>' for title, value in upgrades.items() if value
+        ]) + '</ul>')

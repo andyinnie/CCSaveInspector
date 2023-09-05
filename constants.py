@@ -1246,6 +1246,7 @@ UPGRADES = [
     'Omelette',
     'Chocolate egg',
     'Century egg',
+    '"egg"',
 
     'Caramel macarons',
     'Licorice macarons',
@@ -1996,6 +1997,7 @@ UPGRADES = [
     'Coyotas',
     'Frosted sugar cookies',
     'Marshmallow sandwich cookies',
+
     'Web cookies',
     'Steamed cookies',
 

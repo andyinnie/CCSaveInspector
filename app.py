@@ -5,11 +5,9 @@ from typing import Dict
 
 import streamlit as st
 
-from constants import MINIGAME_NAMES, BUFFS, UPGRADES
+from constants import MINIGAME_NAMES, BUFFS
 from models import Save, Minigame
 from util import fmt, format_time
-
-print(len(UPGRADES))
 
 
 def format_camel(camel_case_str: str) -> str:
@@ -141,15 +139,16 @@ if save is not None:
         box('Achievements', '<ul>' + ''.join([
             f'<li>{title}</li>' for title, value in achievements.items() if value
         ]) + '</ul>')
-
         st.write('')  # idk WHY it doesn't just add space like EVERY other box
+
+        upgrades = save.blocks[6]
+        box('Upgrades', '*Upgrades in parentheses have not been bought.*<ul>' + ''.join([
+            f'<li>{title if upgrades.bought[title] else f"*({title})*"}</li>'
+            for title, value in upgrades.unlocked.items()
+            if value
+        ]) + '</ul>')
 
         options = save.blocks[3].options
         box('Options', '<br>'.join([
             f'**{name}:** ' + ('On' if value else 'Off') for name, value in options.items()
         ]))
-
-        upgrades = save.blocks[6].unlocked
-        box('Upgrades (unlocked)', '<ul>' + ''.join([
-            f'<li>{title}</li>' for title, value in upgrades.items() if value
-        ]) + '</ul>')

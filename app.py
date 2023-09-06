@@ -100,7 +100,7 @@ if save is not None:
         st.markdown(format_fields(stats))
 
     with st.expander('See decoded, but unparsed data'):
-        st.write(save.encode())
+        st.markdown(f'<span style="font-family:monospace;">{save.encode()}</span>', unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3, gap='large')
 

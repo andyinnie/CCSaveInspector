@@ -4,6 +4,7 @@ import re
 from typing import Dict
 
 import streamlit as st
+from jinja2.sandbox import unsafe
 
 from constants import MINIGAME_NAMES, BUFFS
 from models import Save, Minigame
@@ -86,23 +87,26 @@ if save_code:
     save = Save(save_code)
 
 if save is not None:
-    with st.sidebar:
-        st.title('General Info')
-        version = save.blocks[0].version
-        general = save.blocks[2].fields
-
-        general_copy = general.copy()
-
-        st.markdown(format_fields(general_copy))
-
-        st.title('Statistics')
-        stats = save.blocks[4].fields
-        st.markdown(format_fields(stats))
-
-    with st.expander('See decoded, but unparsed data'):
+    with st.expander('See decoded but unparsed data'):
         st.markdown(f'<span style="font-family:monospace;">{save.encode()}</span>', unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns(3, gap='large')
+    col0, col1, col2, col3 = st.columns(4, gap='large')
+
+    with col0:
+        st.header('General')
+
+        version = save.blocks[0].version
+        general = save.blocks[2].fields
+        general_copy = general.copy()
+        box('General Info', format_fields(general_copy))
+
+        stats = save.blocks[4].fields
+        box('Statistics', format_fields(stats))
+
+        options = save.blocks[3].options
+        box('Options', '<br>'.join([
+            f'**{name}:** ' + ('On' if value else 'Off') for name, value in options.items()
+        ]))
 
     minigames = dict()
 
@@ -136,19 +140,24 @@ if save is not None:
             box('Buff', format_fields(copy, sep='</br>'))
 
         achievements = save.blocks[7].unlocked
-        box('Achievements', '<ul>' + ''.join([
-            f'<li>{title}</li>' for title, value in achievements.items() if value
-        ]) + '</ul>')
-        st.write('')  # idk WHY it doesn't just add space like EVERY other box
+        with st.container(height=2000):
+            st.markdown('<h2>Achievements</h2>\n\n<ul>' + ''.join([
+                f'<li>{title}</li>' for title, value in achievements.items() if value
+            ]) + '</ul>', unsafe_allow_html=True)
 
         upgrades = save.blocks[6]
-        box('Upgrades', '*Upgrades in parentheses have not been bought.*<ul>' + ''.join([
-            f'<li>{title if upgrades.bought[title] else f"*({title})*"}</li>'
-            for title, value in upgrades.unlocked.items()
-            if value
-        ]) + '</ul>')
+        with st.container(height=2000):
+            st.markdown('<h2>Upgrades</h2>\n\n*Upgrades in parentheses have not been bought.*<ul>' + ''.join([
+                f'<li>{title if upgrades.bought[title] else f"*({title})*"}</li>'
+                for title, value in upgrades.unlocked.items()
+                if value
+            ]) + '</ul>', unsafe_allow_html=True)
 
-        options = save.blocks[3].options
-        box('Options', '<br>'.join([
-            f'**{name}:** ' + ('On' if value else 'Off') for name, value in options.items()
-        ]))
+    # should target fixed-height containers
+    st.markdown('<style>div[data-testid="stVerticalBlockBorderWrapper"][height]{'
+                'border:0px hidden;'
+                'border-radius:10px;'
+                'background-color:#172D43;'
+                'padding:0 20px 5px;'
+                'overflow-y: scroll;'
+                '}</style>', unsafe_allow_html=True)

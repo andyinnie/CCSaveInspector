@@ -171,7 +171,7 @@ class Building(Encodable):
         self.fields = {
             'count': int(split[0]),
             'countTotal': int(split[1]),
-            'cookiesTotal': int(split[2]),
+            'cookiesTotal': float(split[2]),
             'level': int(split[3]),
             'minigame': minigame,
             'muted': int(split[5]),
@@ -259,7 +259,7 @@ class GeneralBlock(Block):
             'timeSaved': int(split[2]),
             'name': split[3],
             'RandomizerSeed': split[4],
-            'appearance': split[5],
+            'CloneAppearence': split[5],
         }
 
 
